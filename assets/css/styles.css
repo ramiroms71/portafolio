@@ -254,3 +254,52 @@ input, textarea{
     transform: translateY(-3px);
     box-shadow: 0 10px 20px -5px rgba(99, 102, 241, 0.4);
 }
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 2rem;
+}
+
+.project-card {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.project-card h3 {
+    color: var(--accent);
+    margin: 0;
+    font-size: 1.4rem;
+}
+
+.project-card p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.project-icon {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+#servicios h2 {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
+
+#servicios h2::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 60px;
+    height: 4px;
+    background: var(--accent);
+    border-radius: 2px;
+}
