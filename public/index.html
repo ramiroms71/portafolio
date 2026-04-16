@@ -2,7 +2,14 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="Prtafolio de Ramiro Marca, desaroaldor de software especializado en aplicaciones web y moviles."/>
+    <meta name="keywords" content="Ramiro Marca, desarrolador, software, web, móviles, Nodejs, Php, Python, Java, JavaScript"/>
+    <meta name="author" content="Ramiro Marca Sarzuri"/>
+    <meta property="og:title" content="Portafolio de Ramiro Marca"/>
+    <meta property="og:description" content="Descubre los proyectos y habilidades de Ramiro Marca, apasionado por el desarrollo de software"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="https://ibmetro.gob.bo"/>
     <title>Mi Portafolio</title>
     <link rel="stylesheet" href="../assets/css/styles.css">
 </head>
@@ -28,9 +35,21 @@
         <section id="inicio">
             <div class="container person">
                 <div class="person-content">
-                    <h1>Hola, soy Ramiro Marca</h1>
-                    <p>Desarrollador de software</p>
-                    <a href="#contacto" class="btn">Contactame</a>
+                    <span class="person-badge">Disponible para proyectos</span>
+                    <h1>Hola, soy <br> <strong>Ramiro Marca</strong> </h1>
+                    <p>Desarrollador de software y Analista programador especializado en soluciones</p>
+                    <div class="actions">
+                        <a href="#servicios" class="btn--primary">Ver proyectos</a>
+                        <a href="#contacto" class="btn--secondary">Contáctame</a>
+                    </div>
+                    <aside class="person-img">
+                        <div class="float-card card--a">React</div>
+                        <div class="float-card card--b">Nodejs</div>
+                        <div class="float-card card--c">Python</div>
+                        <div class="avatar">
+                            <div class="avatar-interior">RM</div>
+                        </div>    
+                    </aside>
                 </div>
             </div>
         </section>
@@ -38,11 +57,32 @@
         <section id="acercade">
             <div class="container about"> 
                 <h2>Acerca de mi</h2>
-                <p> Soy ingeniero Electronico con experiencia en metrologia</p>
-                <div class="lenguajes"><p>Lenguajes de programacion:</p>
-                    <div class="item-l">Python</div>
-                    <div class="item-l">Php</div>
-                    <div class="item-l">Base de datos (MySQL)</div>
+                <p>Soy Ingeniero Electrónico con experiencia en metrología y desarrollo de software. Me especializo en la creación de soluciones que combinan precisión técnica con tecnologías modernas.</p>
+                 <div class="skill-grid">
+                    <article class="skill-card skill--backend">
+                        <h3>backend</h3>
+                        <ul>
+                            <li>Nodejs</li>
+                            <li>Express</li>
+                            <li>Python</li>
+                        </ul>
+                    </article>
+                    <article class="skill-card skill--frontend">
+                        <h3>frontend</h3>
+                        <ul>
+                            <li>React</li>
+                            <li>HTML</li>
+                            <li>CSS</li>
+                        </ul>
+                    </article>
+                    <article class="skill-card skill--database">
+                        <h3>base de datos</h3>
+                        <ul>
+                            <li>MySQL</li>
+                            <li>MongoDB</li>
+                            <li>PostgreSQL</li>
+                        </ul>
+                    </article>
                 </div>
             </div>
         </section>
@@ -52,19 +92,19 @@
             <h2 class="section-title">Proyectos Implementados</h2>
                 <div class="projects-grid">
                     <div class="person project-card">
-                        <div class="project-icon"></div>
+                        <div class="project-icon">⏱</div>
                         <h3>Software para Calibración de Cronómetros</h3>
                         <p>Desarrollo en <strong>Visual Studio C#.NET</strong> para la toma y análisis automatizado de datos de frecuencia, optimizando la precisión en procesos de metrología del tiempo y frecuencia.</p>
                     </div>
 
                     <div class="person project-card">
-                        <div class="project-icon"></div>
+                        <div class="project-icon">📡</div>
                         <h3>Procedimiento para calibración de Osciloscopios</h3>
                         <p>Implementación técnica de procedimientos de calibración bajo guia EURAMET, asegurando la trazabilidad en mediciones de señales eléctricas.</p>
                     </div>
 
                     <div class="person project-card">
-                        <div class="project-icon"></div>
+                        <div class="project-icon">🔄</div>
                         <h3>Calibración de Tacómetros Ópticos</h3>
                         <p>Desarrollo e implementación de métodos para la verificación y validación de tacómetros ópticos, garantizando mediciones confiables de velocidad angular.</p>
                     </div>
@@ -74,26 +114,27 @@
 
         <section id="contacto">
             <div class="container contact">
-            <h2 class="section-title">Cantactenos</h2>
-            <div class="contact-form">
-                <form action="#" method="post">
-                    <div class="form-group">
-                        <label for="nombre">Nombre completo</label>
-                        <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre">
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Correo electrónico</label>
-                        <input type="email" id="email" name="email" required placeholder="tú@ejemplo.com">
-                    </div>
-                    <div class="form-group">
-                        <label for="mensaje">Mensaje</label>
-                        <textarea id="mensaje" name="mensaje" rows="4" required placeholder="Cuéntame sobre tu proyecto..."></textarea>
-                    </div>
-                    <button type="submit" class="btn-submit">Enviar mensaje →</button>
-                </form>
-                <p style="margin-top: 1rem; font-size: 0.8rem; text-align: center; color: var(--text-secondary)">* Recibirás respuesta en menos de 48h.</p>
+                <h2 class="section-title">Contáctame</h2>
+                <div class="contact-form">
+                    <form action="#" method="post">
+                        <div class="form-group">
+                            <label for="nombre">Nombre completo</label>
+                            <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Correo electrónico</label>
+                            <input type="email" id="email" name="email" required placeholder="tú@ejemplo.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="mensaje">Mensaje</label>
+                            <textarea id="mensaje" name="mensaje" rows="4" required placeholder="Cuéntame sobre tu proyecto..."></textarea>
+                        </div>
+                        <button type="submit" class="btn-submit">Enviar mensaje →</button>
+                    </form>
+                    <p style="margin-top: 1rem; font-size: 0.8rem; text-align: center; color: var(--text-secondary)">* Recibirás respuesta en menos de 48h.</p>
+                </div>
             </div>
-        </div>
+        </section>
  
         </section>
         <p>Bienvenido a mi sitio web</p>
@@ -103,8 +144,8 @@
         <div class="container">
             <div class="social-links">
                 <a href="#" target="_blank">Github</a>
-                <a href="" target="_blank">LinkedIn</a>
-                <a href="" target="_blank">Facebook</a>
+                <a href="#" target="_blank">LinkedIn</a>
+                <a href="#" target="_blank">Facebook</a>
             </div>
         </div>
         <p>&copy; 2026 Mi Sitio Web. Todos los derechos reservados.</p>
