@@ -1,154 +1,284 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta name="description" content="Prtafolio de Ramiro Marca, desaroaldor de software especializado en aplicaciones web y moviles."/>
-    <meta name="keywords" content="Ramiro Marca, desarrolador, software, web, móviles, Nodejs, Php, Python, Java, JavaScript"/>
-    <meta name="author" content="Ramiro Marca Sarzuri"/>
-    <meta property="og:title" content="Portafolio de Ramiro Marca"/>
-    <meta property="og:description" content="Descubre los proyectos y habilidades de Ramiro Marca, apasionado por el desarrollo de software"/>
-    <meta property="og:type" content="website"/>
-    <meta property="og:url" content="https://ibmetro.gob.bo"/>
-    <title>Mi Portafolio</title>
-    <link rel="stylesheet" href="../assets/css/styles.css">
-</head>
-<body>
-    <header>
-        <div class="container">
-            <div class="navbar">
-                <div class="logo">Ramiro Marca Sarzuri</div>
-                <nav>
-                    <ul>
-                        <li><a href="#inicio">Inicio</a></li>
-                        <li><a href="#acercade">Acerca de</a></li>
-                        <li><a href="#servicios">Servicios</a></li>
-                        <li><a href="#contacto">Contacto</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
-        <!--h1>Bienvenido a mi sitio web</h1!-->
-    </header>
-
-    <main>
-        <section id="inicio">
-            <div class="container person">
-                <div class="person-content">
-                    <span class="person-badge">Disponible para proyectos</span>
-                    <h1>Hola, soy <br> <strong>Ramiro Marca</strong> </h1>
-                    <p>Desarrollador de software y Analista programador especializado en soluciones</p>
-                    <div class="actions">
-                        <a href="#servicios" class="btn--primary">Ver proyectos</a>
-                        <a href="#contacto" class="btn--secondary">Contáctame</a>
-                    </div>
-                    <aside class="person-img">
-                        <div class="float-card card--a">React</div>
-                        <div class="float-card card--b">Nodejs</div>
-                        <div class="float-card card--c">Python</div>
-                        <div class="avatar">
-                            <div class="avatar-interior">RM</div>
-                        </div>    
-                    </aside>
-                </div>
-            </div>
-        </section>
-
-        <section id="acercade">
-            <div class="container about"> 
-                <h2>Acerca de mi</h2>
-                <p>Soy Ingeniero Electrónico con experiencia en metrología y desarrollo de software. Me especializo en la creación de soluciones que combinan precisión técnica con tecnologías modernas.</p>
-                 <div class="skill-grid">
-                    <article class="skill-card skill--backend">
-                        <h3>backend</h3>
-                        <ul>
-                            <li>Nodejs</li>
-                            <li>Express</li>
-                            <li>Python</li>
-                        </ul>
-                    </article>
-                    <article class="skill-card skill--frontend">
-                        <h3>frontend</h3>
-                        <ul>
-                            <li>React</li>
-                            <li>HTML</li>
-                            <li>CSS</li>
-                        </ul>
-                    </article>
-                    <article class="skill-card skill--database">
-                        <h3>base de datos</h3>
-                        <ul>
-                            <li>MySQL</li>
-                            <li>MongoDB</li>
-                            <li>PostgreSQL</li>
-                        </ul>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <section id="servicios">
-            <div class="container">
-            <h2 class="section-title">Proyectos Implementados</h2>
-                <div class="projects-grid">
-                    <div class="person project-card">
-                        <div class="project-icon">⏱</div>
-                        <h3>Software para Calibración de Cronómetros</h3>
-                        <p>Desarrollo en <strong>Visual Studio C#.NET</strong> para la toma y análisis automatizado de datos de frecuencia, optimizando la precisión en procesos de metrología del tiempo y frecuencia.</p>
-                    </div>
-
-                    <div class="person project-card">
-                        <div class="project-icon">📡</div>
-                        <h3>Procedimiento para calibración de Osciloscopios</h3>
-                        <p>Implementación técnica de procedimientos de calibración bajo guia EURAMET, asegurando la trazabilidad en mediciones de señales eléctricas.</p>
-                    </div>
-
-                    <div class="person project-card">
-                        <div class="project-icon">🔄</div>
-                        <h3>Calibración de Tacómetros Ópticos</h3>
-                        <p>Desarrollo e implementación de métodos para la verificación y validación de tacómetros ópticos, garantizando mediciones confiables de velocidad angular.</p>
-                    </div>
-                </div>
-            </div>       
-        </section>
-
-        <section id="contacto">
-            <div class="container contact">
-                <h2 class="section-title">Contáctame</h2>
-                <div class="contact-form">
-                    <form action="#" method="post">
-                        <div class="form-group">
-                            <label for="nombre">Nombre completo</label>
-                            <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre">
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Correo electrónico</label>
-                            <input type="email" id="email" name="email" required placeholder="tú@ejemplo.com">
-                        </div>
-                        <div class="form-group">
-                            <label for="mensaje">Mensaje</label>
-                            <textarea id="mensaje" name="mensaje" rows="4" required placeholder="Cuéntame sobre tu proyecto..."></textarea>
-                        </div>
-                        <button type="submit" class="btn-submit">Enviar mensaje →</button>
-                    </form>
-                    <p style="margin-top: 1rem; font-size: 0.8rem; text-align: center; color: var(--text-secondary)">* Recibirás respuesta en menos de 48h.</p>
-                </div>
-            </div>
-        </section>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ramiro Marca Sarzuri – Ingeniero Electrónico</title>
+    <meta name="description" content="Portafolio de Ramiro Marca Sarzuri, Ingeniero Electrónico especializado en Metrología y desarrollo de software de calibración." />
+    <meta name="keywords" content="metrología, calibración, ingeniero electrónico, software, C#, Bolivia, cronómetros, osciloscopios" />
+    <meta name="author" content="Ramiro Marca Sarzuri" />
+    <meta property="og:title" content="Ramiro Marca Sarzuri – Ingeniero Electrónico" />
+    <meta property="og:description" content="Portafolio profesional de Ramiro Marca Sarzuri, especialista en metrología y calibración." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://ibmetro.gob.bo" />
+    <link rel="stylesheet" href="../assets/css/styles.css" />
+  </head>
+  <body>
  
-        </section>
-        <p>Bienvenido a mi sitio web</p>
-    </main>
-
-    <footer>
-        <div class="container">
-            <div class="social-links">
-                <a href="#" target="_blank">Github</a>
-                <a href="#" target="_blank">LinkedIn</a>
-                <a href="#" target="_blank">Facebook</a>
-            </div>
+    <header>
+      <div class="container">
+        <div class="navbar">
+          <div class="logo">Ramiro Marca Sarzuri</div>
+          <nav aria-label="Navegación principal">
+            <ul>
+              <li><a href="#inicio">Inicio</a></li>
+              <li><a href="#acercade">Acerca de</a></li>
+              <li><a href="#servicios">Proyectos</a></li>
+              <li><a href="#contacto">Contacto</a></li>
+            </ul>
+          </nav>
         </div>
-        <p>&copy; 2026 Mi Sitio Web. Todos los derechos reservados.</p>
+      </div>
+    </header>
+ 
+    <main>
+ 
+      <!-- Hero -->
+      <section id="inicio" aria-label="Presentación">
+        <div class="container hero-grid">
+          <div class="hero-content">
+            <span class="hero-badge">Disponible para proyectos</span>
+            <h1>Hola, soy<br><strong>Ramiro Marca</strong></h1>
+            <p>Ingeniero Electrónico y Analista Programador especializado en metrología, calibración y desarrollo de software técnico.</p>
+            <div class="hero-actions">
+              <a href="#servicios" class="btn btn--primary">Ver proyectos</a>
+              <a href="#contacto" class="btn btn--outline">Contáctame</a>
+            </div>
+          </div>
+          <aside class="hero-visual" aria-hidden="true">
+            <div class="floating-card card--a">C# .NET</div>
+            <div class="floating-card card--b">Metrología</div>
+            <div class="floating-card card--c">Python</div>
+            <div class="avatar-ring">
+              <div class="avatar-inner">RM</div>
+            </div>
+          </aside>
+        </div>
+      </section>
+ 
+      <!-- Acerca de -->
+      <section id="acercade" aria-label="Acerca de mí">
+        <div class="container about-grid">
+ 
+          <header class="section-header">
+            <h2>Acerca de mí</h2>
+            <p>Ingeniería de precisión aplicada a la tecnología y el software.</p>
+          </header>
+ 
+          <div class="about-bio">
+            <p>
+              Soy Ingeniero Electrónico con sólida experiencia en metrología del tiempo, 
+              frecuencia y magnitudes eléctricas. Me especializo en el diseño e implementación 
+              de procedimientos de calibración bajo normas internacionales (EURAMET, JCGM) 
+              y en el desarrollo de software técnico para automatización de mediciones. 
+              Combino el rigor metrólogico con las herramientas de programación modernas 
+              para crear soluciones de alta precisión.
+            </p>
+          </div>
+ 
+          <div class="skills-grid" aria-label="Habilidades técnicas">
+            <article class="skill-card skill--metrology">
+              <span class="skill-icon">🎯</span>
+              <h3>Metrología</h3>
+              <ul>
+                <li>Calibración de instrumentos</li>
+                <li>EURAMET / JCGM</li>
+                <li>Incertidumbre de medición</li>
+                <li>Trazabilidad metrológica</li>
+              </ul>
+            </article>
+            <article class="skill-card skill--software">
+              <span class="skill-icon">💻</span>
+              <h3>Software</h3>
+              <ul>
+                <li>C# .NET (Visual Studio)</li>
+                <li>Python</li>
+                <li>Node.js / Express</li>
+                <li>React</li>
+              </ul>
+            </article>
+            <article class="skill-card skill--db">
+              <span class="skill-icon">🗄️</span>
+              <h3>Bases de Datos</h3>
+              <ul>
+                <li>MySQL</li>
+                <li>PostgreSQL</li>
+                <li>MongoDB</li>
+              </ul>
+            </article>
+          </div>
+ 
+        </div>
+      </section>
+ 
+      <!-- Proyectos -->
+      <section id="servicios" aria-label="Proyectos implementados">
+        <div class="container">
+          <header class="section-header">
+            <h2>Proyectos implementados</h2>
+            <p>Soluciones técnicas de precisión en metrología y software.</p>
+          </header>
+ 
+          <div class="projects-grid">
+ 
+            <article class="project-card">
+              <div class="project-img" aria-hidden="true">⏱️</div>
+              <div class="project-info">
+                <h3>Software para Calibración de Cronómetros</h3>
+                <p>Aplicación desarrollada en <strong>Visual Studio C# .NET</strong> para la toma y análisis automatizado de datos de frecuencia. Optimiza la precisión en procesos de metrología del tiempo y frecuencia, reduciendo errores humanos en la adquisición de datos.</p>
+                <footer class="project-tags">
+                  <span class="tech-badge">C# .NET</span>
+                  <span class="tech-badge">Visual Studio</span>
+                  <span class="tech-badge">Metrología</span>
+                </footer>
+              </div>
+            </article>
+ 
+            <article class="project-card">
+              <div class="project-img" aria-hidden="true">📡</div>
+              <div class="project-info">
+                <h3>Procedimiento para Calibración de Osciloscopios</h3>
+                <p>Implementación técnica de procedimientos de calibración bajo guía EURAMET cg-7. Asegura la trazabilidad en mediciones de señales eléctricas, con evaluación de incertidumbre conforme al GUM.</p>
+                <footer class="project-tags">
+                  <span class="tech-badge">EURAMET</span>
+                  <span class="tech-badge">GUM</span>
+                  <span class="tech-badge">Señales eléctricas</span>
+                </footer>
+              </div>
+            </article>
+ 
+            <article class="project-card">
+              <div class="project-img" aria-hidden="true">🔄</div>
+              <div class="project-info">
+                <h3>Calibración de Tacómetros Ópticos</h3>
+                <p>Desarrollo e implementación de métodos de verificación y validación para tacómetros ópticos. Garantiza mediciones confiables de velocidad angular con trazabilidad a patrones nacionales.</p>
+                <footer class="project-tags">
+                  <span class="tech-badge">Velocidad angular</span>
+                  <span class="tech-badge">Óptica</span>
+                  <span class="tech-badge">Trazabilidad</span>
+                </footer>
+              </div>
+            </article>
+ 
+          </div>
+        </div>
+      </section>
+ 
+      <!-- Contacto -->
+      <section id="contacto" aria-label="Contacto">
+        <div class="container contact-grid">
+          <header class="section-header">
+            <h2>Contáctame</h2>
+            <p>¿Tienes un proyecto técnico en mente? Hablemos.</p>
+          </header>
+ 
+          <div class="contact-layout">
+            <aside class="contact-info">
+              <div class="contact-item">
+                <span class="contact-icon">📧</span>
+                <div>
+                  <strong>Email</strong>
+                  <p>rsarzuri@ibmetro.gob.bo</p>
+                </div>
+              </div>
+              <div class="contact-item">
+                <span class="contact-icon">📍</span>
+                <div>
+                  <strong>Ubicación</strong>
+                  <p>La Paz, Bolivia</p>
+                </div>
+              </div>
+              <div class="contact-item">
+                <span class="contact-icon">🏛️</span>
+                <div>
+                  <strong>Institución</strong>
+                  <p>IBMETRO - Instituto Boliviano de Metrología</p>
+                </div>
+              </div>
+              <div class="contact-item">
+                <span class="contact-icon">⏱️</span>
+                <div>
+                  <strong>Respuesta</strong>
+                  <p>Menos de 48 horas</p>
+                </div>
+              </div>
+            </aside>
+ 
+            <div class="contact-form">
+              <form action="#" method="post" novalidate>
+                <div class="form-group">
+                  <label for="nombre">Nombre completo</label>
+                  <input type="text" id="nombre" name="nombre" required minlength="3"
+                    placeholder="Tu nombre completo" autocomplete="name" />
+                </div>
+                <div class="form-group">
+                  <label for="email">Correo electrónico</label>
+                  <input type="email" id="email" name="email" required
+                    placeholder="tú@ejemplo.com" autocomplete="email" />
+                </div>
+                <div class="form-group">
+                  <label for="fecha">Fecha preferida de contacto</label>
+                  <input type="date" id="fecha" name="fecha" />
+                </div>
+                <div class="form-group">
+                  <label for="presupuesto">
+                    Presupuesto estimado:
+                    <span class="range-value" id="presupuesto-val">300 Bs</span>
+                  </label>
+                  <input type="range" id="presupuesto" name="presupuesto"
+                    min="100" max="5000" step="100" value="500" />
+                  <div class="range-labels"><span>100 Bs</span><span>3000  Bs</span></div>
+                </div>
+                <div class="form-group">
+                  <label for="servicio">Tipo de servicio</label>
+                  <input type="search" id="servicio" name="servicio"
+                    list="servicios-list" placeholder="Busca un servicio..." />
+                  <datalist id="servicios-list">
+                    <option value="Software de Calibración">
+                    <option value="Procedimiento Metrológico">
+                    <option value="Desarrollo Web / Backend">
+                    <option value="Consultoría Técnica">
+                    <option value="Capacitación en Metrología">
+                  </datalist>
+                </div>
+                <div class="form-group">
+                  <label for="mensaje">Mensaje</label>
+                  <textarea id="mensaje" name="mensaje" rows="4" required minlength="20"
+                    placeholder="Cuéntame sobre tu proyecto o consulta..."></textarea>
+                </div>
+                <button type="submit" class="btn-submit">Enviar mensaje →</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+ 
+    </main>
+ 
+    <footer>
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <span class="logo">Ramiro Marca Sarzuri</span>
+          <p>Ingeniero Electrónico · Metrología · La Paz, Bolivia</p>
+        </div>
+        <nav class="social-links" aria-label="Redes sociales">
+          <a href="https://github.com/ramiroms71/portafolio" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="https://www.linkedin.com/in/ramiro-marca-5b48711b4" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://www.facebook.com/ramiro.marca.sarzuri.2025" target="_blank" rel="noopener noreferrer">Facebook</a>
+        </nav>
+      </div>
+      <p class="footer-copy">&copy; 2026 Ramiro Marca Sarzuri. Todos los derechos reservados.</p>
     </footer>
-</body>
+ 
+    <script>
+      const range = document.getElementById('presupuesto');
+      const val   = document.getElementById('presupuesto-val');
+      if (range && val) {
+        range.addEventListener('input', () => {
+          val.textContent = '$' + Number(range.value).toLocaleString();
+        });
+      }
+    </script>
+ 
+  </body>
 </html>
