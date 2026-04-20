@@ -1,11 +1,13 @@
 /* ============================================================ */
 /*  Portafolio – Ramiro Marca Sarzuri                           */
+/*  Paleta: Beige cálido + Terracota + Marrón dorado + Crema    */
 /* ============================================================ */
  
  
 /* ============================================================ */
 /* 1. VARIABLES CSS                                             */
 /* ============================================================ */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=DM+Sans:wght@400;500;600&display=swap');
  
 :root {
     /* Paleta beige armoniosa */
@@ -783,3 +785,305 @@ footer {
     .footer-grid { grid-template-columns: 1fr; text-align: center; }
     .social-links { justify-content: center; }
 }
+ 
+ 
+/* ============================================================ */
+/* ESTILOS ADICIONALES PARA ELEMENTOS JS                        */
+/* ============================================================ */
+ 
+/* ── Botón de tema oscuro ─────────────────────────────────── */
+.btn-theme {
+    background: var(--accent-light);
+    border: 1px solid var(--border);
+    border-radius: 50px;
+    padding: 0.4rem 0.8rem;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: var(--transition);
+    line-height: 1;
+}
+.btn-theme:hover {
+    background: var(--accent);
+    transform: translateY(-2px);
+}
+ 
+/* ── Dark mode ────────────────────────────────────────────── */
+body.dark-mode {
+    --bg-primary:    #1e1a14;
+    --bg-secondary:  #2a2419;
+    --bg-tertiary:   #251f15;
+    --bg-card:       #2f2820;
+    --text-primary:  #f0e8d8;
+    --text-secondary:#c8b89a;
+    --text-muted:    #7a6a55;
+    --border:        #3d3328;
+    --accent-light:  #3d2e1a;
+}
+ 
+/* ── Toast de notificaciones ─────────────────────────────── */
+.toast {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    padding: 0.9rem 1.5rem;
+    border-radius: 12px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    max-width: 360px;
+    z-index: 9999;
+    opacity: 0;
+    transform: translateY(10px);
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    box-shadow: var(--card-shadow);
+    color: var(--text-primary);
+}
+.toast--show {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+.toast--success { border-left: 4px solid var(--accent); }
+.toast--error   { border-left: 4px solid #c0784a; }
+ 
+/* ── Barra de filtros ────────────────────────────────────── */
+.filter-bar {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+}
+.filter-btn {
+    padding: 0.5rem 1.25rem;
+    border-radius: 50px;
+    border: 1.5px solid var(--border);
+    background: var(--bg-secondary);
+    color: var(--text-secondary);
+    font-weight: 600;
+    font-size: 0.88rem;
+    cursor: pointer;
+    transition: var(--transition);
+    font-family: var(--font-body);
+}
+.filter-btn:hover,
+.filter-btn.active {
+    background: var(--accent);
+    color: var(--bg-secondary);
+    border-color: var(--accent);
+    transform: translateY(-2px);
+}
+ 
+/* ── Contador de proyectos ───────────────────────────────── */
+.project-counter {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+}
+.project-counter span {
+    font-weight: 700;
+    color: var(--accent);
+}
+ 
+/* ── Dashboard de estadísticas ───────────────────────────── */
+#dashboard {
+    padding: var(--section-py) 0;
+    background: var(--bg-tertiary);
+}
+#dashboard code {
+    background: var(--accent-light);
+    color: var(--accent);
+    padding: 0.1rem 0.45rem;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-family: 'Courier New', monospace;
+}
+.dashboard-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1.25rem;
+    margin-top: 1rem;
+}
+.stat-item {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 1.5rem 1rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+    transition: var(--transition);
+    box-shadow: var(--card-shadow);
+}
+.stat-item:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent);
+}
+.stat-icon  { font-size: 1.8rem; }
+.stat-value {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--accent);
+    line-height: 1;
+}
+.stat-label {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+ 
+/* ── Sección buscador de país ────────────────────────────── */
+#pais {
+    padding: var(--section-py) 0;
+    background: var(--bg-primary);
+}
+#pais code {
+    background: var(--accent-light);
+    color: var(--accent);
+    padding: 0.1rem 0.45rem;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-family: 'Courier New', monospace;
+}
+.country-search-wrapper {
+    max-width: 480px;
+    margin: 0 auto 2rem;
+}
+.country-search-wrapper input {
+    width: 100%;
+    padding: 0.85rem 1.25rem;
+    border: 1.5px solid var(--border);
+    border-radius: 50px;
+    font-size: 1rem;
+    font-family: var(--font-body);
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    transition: var(--transition);
+}
+.country-search-wrapper input:focus {
+    border-color: var(--accent);
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(181,114,42,0.12);
+}
+.country-result {
+    max-width: 520px;
+    margin: 0 auto;
+    min-height: 80px;
+}
+.country-card {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 1.5rem;
+    box-shadow: var(--card-shadow);
+    animation: fadeUp 0.4s ease both;
+}
+.country-flag {
+    width: 80px;
+    height: auto;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    flex-shrink: 0;
+}
+.country-info h4 {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+.country-info p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.2rem;
+}
+.country-info strong { color: var(--accent); }
+ 
+/* ── Textos de estado (loading / error) ──────────────────── */
+.loading-text {
+    color: var(--text-muted);
+    font-style: italic;
+    text-align: center;
+    padding: 1.5rem 0;
+    animation: pulse 1.5s ease-in-out infinite;
+}
+.error-text {
+    color: #c0784a;
+    text-align: center;
+    padding: 1rem 0;
+    font-size: 0.95rem;
+}
+ 
+/* ── Sección Pokémon ────────────────────────────────────── */
+#poke-section {
+    padding: var(--section-py) 0;
+    background: var(--bg-secondary);
+}
+#poke-section code {
+    background: var(--accent-light);
+    color: var(--accent);
+    padding: 0.1rem 0.45rem;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-family: 'Courier New', monospace;
+}
+.poke-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 1.25rem;
+    margin-top: 1rem;
+}
+.poke-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 1rem 0.75rem 0.75rem;
+    text-align: center;
+    transition: var(--transition);
+    box-shadow: var(--card-shadow);
+}
+.poke-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--accent);
+}
+.poke-card img {
+    width: 90px;
+    height: 90px;
+    margin: 0 auto 0.5rem;
+    object-fit: contain;
+}
+.poke-name {
+    font-weight: 700;
+    font-size: 0.85rem;
+    color: var(--text-primary);
+    text-transform: capitalize;
+    margin-bottom: 0.3rem;
+}
+.poke-type {
+    display: inline-block;
+    background: var(--accent-light);
+    color: var(--accent-hover);
+    padding: 0.15rem 0.6rem;
+    border-radius: 20px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: capitalize;
+    border: 1px solid rgba(181,114,42,0.2);
+}
+/* Colores por tipo de pokémon */
+.poke--fire    { border-color: #f97316; }
+.poke--water   { border-color: #3b82f6; }
+.poke--grass   { border-color: #22c55e; }
+.poke--electric { border-color: #eab308; }
+.poke--psychic  { border-color: #ec4899; }
+.poke--ice     { border-color: #06b6d4; }
+.poke--dragon  { border-color: #8b5cf6; }
+.poke--normal  { border-color: var(--border); }

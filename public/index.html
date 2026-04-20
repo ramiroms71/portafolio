@@ -11,9 +11,12 @@
     <meta property="og:description" content="Portafolio profesional de Ramiro Marca Sarzuri, especialista en metrología y calibración." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://ibmetro.gob.bo" />
-    <link rel="stylesheet" href="../assets/css/styles.css" />
+    <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
+ 
+    <!-- Toast de notificaciones (manipulación DOM + classList) -->
+    <div id="toast" class="toast" role="alert" aria-live="polite"></div>
  
     <header>
       <div class="container">
@@ -24,9 +27,12 @@
               <li><a href="#inicio">Inicio</a></li>
               <li><a href="#acercade">Acerca de</a></li>
               <li><a href="#servicios">Proyectos</a></li>
+              <li><a href="#dashboard">Estadísticas</a></li>
               <li><a href="#contacto">Contacto</a></li>
             </ul>
           </nav>
+          <!-- Botón tema oscuro: localStorage + classList.toggle -->
+          <button id="theme-toggle" class="btn-theme" aria-label="Cambiar a modo oscuro" title="Alternar tema">🌙</button>
         </div>
       </div>
     </header>
@@ -59,23 +65,20 @@
       <!-- Acerca de -->
       <section id="acercade" aria-label="Acerca de mí">
         <div class="container about-grid">
- 
           <header class="section-header">
             <h2>Acerca de mí</h2>
             <p>Ingeniería de precisión aplicada a la tecnología y el software.</p>
           </header>
- 
           <div class="about-bio">
             <p>
-              Soy Ingeniero Electrónico con sólida experiencia en metrología del tiempo, 
-              frecuencia y magnitudes eléctricas. Me especializo en el diseño e implementación 
-              de procedimientos de calibración bajo normas internacionales (EURAMET, JCGM) 
-              y en el desarrollo de software técnico para automatización de mediciones. 
-              Combino el rigor metrólogico con las herramientas de programación modernas 
+              Soy Ingeniero Electrónico con sólida experiencia en metrología del tiempo,
+              frecuencia y magnitudes eléctricas. Me especializo en el diseño e implementación
+              de procedimientos de calibración bajo normas internacionales (EURAMET, JCGM)
+              y en el desarrollo de software técnico para automatización de mediciones.
+              Combino el rigor metrológico con las herramientas de programación modernas
               para crear soluciones de alta precisión.
             </p>
           </div>
- 
           <div class="skills-grid" aria-label="Habilidades técnicas">
             <article class="skill-card skill--metrology">
               <span class="skill-icon">🎯</span>
@@ -107,11 +110,10 @@
               </ul>
             </article>
           </div>
- 
         </div>
       </section>
  
-      <!-- Proyectos -->
+      <!-- Proyectos — renderizados por renderProjects() en JS -->
       <section id="servicios" aria-label="Proyectos implementados">
         <div class="container">
           <header class="section-header">
@@ -119,48 +121,72 @@
             <p>Soluciones técnicas de precisión en metrología y software.</p>
           </header>
  
-          <div class="projects-grid">
- 
-            <article class="project-card">
-              <div class="project-img" aria-hidden="true">⏱️</div>
-              <div class="project-info">
-                <h3>Software para Calibración de Cronómetros</h3>
-                <p>Aplicación desarrollada en <strong>Visual Studio C# .NET</strong> para la toma y análisis automatizado de datos de frecuencia. Optimiza la precisión en procesos de metrología del tiempo y frecuencia, reduciendo errores humanos en la adquisición de datos.</p>
-                <footer class="project-tags">
-                  <span class="tech-badge">C# .NET</span>
-                  <span class="tech-badge">Visual Studio</span>
-                  <span class="tech-badge">Metrología</span>
-                </footer>
-              </div>
-            </article>
- 
-            <article class="project-card">
-              <div class="project-img" aria-hidden="true">📡</div>
-              <div class="project-info">
-                <h3>Procedimiento para Calibración de Osciloscopios</h3>
-                <p>Implementación técnica de procedimientos de calibración bajo guía EURAMET cg-7. Asegura la trazabilidad en mediciones de señales eléctricas, con evaluación de incertidumbre conforme al GUM.</p>
-                <footer class="project-tags">
-                  <span class="tech-badge">EURAMET</span>
-                  <span class="tech-badge">GUM</span>
-                  <span class="tech-badge">Señales eléctricas</span>
-                </footer>
-              </div>
-            </article>
- 
-            <article class="project-card">
-              <div class="project-img" aria-hidden="true">🔄</div>
-              <div class="project-info">
-                <h3>Calibración de Tacómetros Ópticos</h3>
-                <p>Desarrollo e implementación de métodos de verificación y validación para tacómetros ópticos. Garantiza mediciones confiables de velocidad angular con trazabilidad a patrones nacionales.</p>
-                <footer class="project-tags">
-                  <span class="tech-badge">Velocidad angular</span>
-                  <span class="tech-badge">Óptica</span>
-                  <span class="tech-badge">Trazabilidad</span>
-                </footer>
-              </div>
-            </article>
- 
+          <!-- Filtros: eventos click + dataset.filter -->
+          <div class="filter-bar" role="group" aria-label="Filtrar proyectos">
+            <button class="filter-btn active" data-filter="all">Todos</button>
+            <button class="filter-btn" data-filter="software">Software</button>
+            <button class="filter-btn" data-filter="metrology">Metrología</button>
           </div>
+ 
+          <!-- Contador: actualizado con textContent desde JS -->
+          <p class="project-counter">
+            Mostrando <span id="project-count">3 proyectos</span>
+          </p>
+ 
+          <!-- Grid vacío: llenado por innerHTML desde renderProjects() -->
+          <div class="projects-grid" aria-label="Lista de proyectos"></div>
+        </div>
+      </section>
+ 
+      <!-- Dashboard — Promise.all con 3 APIs en paralelo -->
+      <section id="dashboard" aria-label="Estadísticas en tiempo real">
+        <div class="container">
+          <header class="section-header">
+            <h2>Estadísticas en tiempo real</h2>
+            <p>Datos cargados en paralelo con <code>Promise.all()</code> desde JSONPlaceholder.</p>
+          </header>
+          <!-- Contenido generado por loadDashboardStats() -->
+          <div id="dashboard-stats" class="dashboard-stats">
+            <p class="loading-text">Cargando estadísticas...</p>
+          </div>
+        </div>
+      </section>
+ 
+      <!-- Pokémon — PokeAPI + Promise.all + paginación -->
+      <section id="poke-section" aria-label="Pokémon con PokeAPI">
+        <div class="container">
+          <header class="section-header">
+            <h2>PokeAPI — Promise.all</h2>
+            <p>6 pokémon cargados en paralelo con <code>Promise.all()</code>. Paginación con evento <code>click</code>.</p>
+          </header>
+          <!-- Grid inyectado por fetchPokemons() vía innerHTML -->
+          <div id="poke-grid" class="poke-grid">
+            <p class="loading-text">Cargando Pokémon...</p>
+          </div>
+          <div style="text-align:center; margin-top:1.5rem;">
+            <button id="poke-next" class="btn btn--outline">Ver más Pokémon →</button>
+          </div>
+        </div>
+      </section>
+ 
+      <!-- Buscador de País — Fetch GET + debounce + DOM -->
+      <section id="pais" aria-label="Búsqueda de país">
+        <div class="container">
+          <header class="section-header">
+            <h2>Buscador de países</h2>
+            <p>Consulta datos con <code>fetch()</code> + REST Countries API. Escribe para buscar.</p>
+          </header>
+          <div class="country-search-wrapper">
+            <input
+              type="search"
+              id="country-search"
+              placeholder="Escribe un país, ej: Bolivia…"
+              autocomplete="off"
+              aria-label="Buscar país"
+            />
+          </div>
+          <!-- Resultado inyectado por fetchCountry() vía innerHTML -->
+          <div id="country-result" class="country-result" aria-live="polite"></div>
         </div>
       </section>
  
@@ -171,14 +197,13 @@
             <h2>Contáctame</h2>
             <p>¿Tienes un proyecto técnico en mente? Hablemos.</p>
           </header>
- 
           <div class="contact-layout">
             <aside class="contact-info">
               <div class="contact-item">
                 <span class="contact-icon">📧</span>
                 <div>
                   <strong>Email</strong>
-                  <p>rsarzuri@ibmetro.gob.bo</p>
+                  <p>ramiro.marca@ibmetro.gob.bo</p>
                 </div>
               </div>
               <div class="contact-item">
@@ -192,7 +217,7 @@
                 <span class="contact-icon">🏛️</span>
                 <div>
                   <strong>Institución</strong>
-                  <p>IBMETRO - Instituto Boliviano de Metrología</p>
+                  <p>IBMETRO – Instituto Boliviano de Metrología</p>
                 </div>
               </div>
               <div class="contact-item">
@@ -223,11 +248,11 @@
                 <div class="form-group">
                   <label for="presupuesto">
                     Presupuesto estimado:
-                    <span class="range-value" id="presupuesto-val">300 Bs</span>
+                    <span class="range-value" id="presupuesto-val">$500</span>
                   </label>
                   <input type="range" id="presupuesto" name="presupuesto"
                     min="100" max="5000" step="100" value="500" />
-                  <div class="range-labels"><span>100 Bs</span><span>3000  Bs</span></div>
+                  <div class="range-labels"><span>$100</span><span>$5000</span></div>
                 </div>
                 <div class="form-group">
                   <label for="servicio">Tipo de servicio</label>
@@ -262,23 +287,17 @@
           <p>Ingeniero Electrónico · Metrología · La Paz, Bolivia</p>
         </div>
         <nav class="social-links" aria-label="Redes sociales">
-          <a href="https://github.com/ramiroms71/portafolio" target="_blank" rel="noopener noreferrer">GitHub</a>
-          <a href="https://www.linkedin.com/in/ramiro-marca-5b48711b4" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-          <a href="https://www.facebook.com/ramiro.marca.sarzuri.2025" target="_blank" rel="noopener noreferrer">Facebook</a>
+          <a href="https://github.com/ramiro-marca" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="https://www.linkedin.com/in/ramiro-marca" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://www.facebook.com/ramiro.marca" target="_blank" rel="noopener noreferrer">Facebook</a>
         </nav>
       </div>
       <p class="footer-copy">&copy; 2026 Ramiro Marca Sarzuri. Todos los derechos reservados.</p>
     </footer>
  
-    <script>
-      const range = document.getElementById('presupuesto');
-      const val   = document.getElementById('presupuesto-val');
-      if (range && val) {
-        range.addEventListener('input', () => {
-          val.textContent = '$' + Number(range.value).toLocaleString();
-        });
-      }
-    </script>
+    <!-- type="module": habilita import/export ES6                  -->
+    <!-- ⚠️ Requiere servidor HTTP (Live Server o npx serve .)      -->
+    <script type="module" src="js/app.js"></script>
  
   </body>
 </html>
