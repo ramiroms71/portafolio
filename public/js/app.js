@@ -284,7 +284,7 @@ function validateEmail(email) {
 }
  
 // .then() y .catch() — demostración de encadenamiento
-validateEmail('ramiro.marca@ibmetro.gob.bo')
+validateEmail('rsarzuri@ibmetro.gob.bo')
   .then(({ email }) => console.log(`✅ Email válido: ${email}`))
   .catch(err => console.error('❌', err.message));
  
